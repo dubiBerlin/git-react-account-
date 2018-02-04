@@ -1,0 +1,10 @@
+1) npx create-react-app my-app
+2) cd my-app
+3) npm i --save react-bootstrap --save
+4) npm i --save react-slick --save
+5) add the following link to public/index.html in order to bind bootstrap class
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+6) npm install slick-carousel --save
+7) import into component where slider is defined:
+    import 'slick-carousel/slick/slick.css';
+    import 'slick-carousel/slick/slick-theme.css';
