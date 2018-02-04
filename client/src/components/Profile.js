@@ -54,10 +54,38 @@ class Profile extends Component {
             controlId="formBasicText"
             //validationState={this.getValidationState()}
           >
-            <ControlLabel>Name:</ControlLabel>
+            <ControlLabel>Name</ControlLabel>
+            <FormControl
+              type="text"
+              value={this.state.userInfo.name}
+              placeholder="Enter text"
+              //onChange={this.handleChange}
+            />
+            <ControlLabel>Username</ControlLabel>
             <FormControl
               type="text"
               value={this.state.userInfo.login}
+              placeholder="Enter text"
+              //onChange={this.handleChange}
+            />
+            <ControlLabel>Bio</ControlLabel>
+            <FormControl
+              type="text"
+              value={this.state.userInfo.bio}
+              placeholder="Enter text"
+              //onChange={this.handleChange}
+            />
+            <ControlLabel>Location</ControlLabel>
+            <FormControl
+              type="text"
+              value={this.state.userInfo.location}
+              placeholder="Enter text"
+              //onChange={this.handleChange}
+            />
+            <ControlLabel>Company</ControlLabel>
+            <FormControl
+              type="text"
+              value={this.state.userInfo.company}
               placeholder="Enter text"
               //onChange={this.handleChange}
             />
@@ -65,10 +93,29 @@ class Profile extends Component {
         ) : (
           <div>
             <p>
-              <strong>
-                Name:
-                {this.state.userInfo.login}
-              </strong>
+              <strong>Name</strong>
+              <br />
+              {this.state.userInfo.name}
+            </p>
+            <p>
+              <strong>Username</strong>
+              <br />
+              {this.state.userInfo.login}
+            </p>
+            <p>
+              <strong>Bio</strong>
+              <br />
+              {this.state.userInfo.bio}
+            </p>
+            <p>
+              <strong>Location</strong>
+              <br />
+              {this.state.userInfo.location}
+            </p>
+            <p>
+              <strong>Company</strong>
+              <br />
+              {this.state.userInfo.company}
             </p>
           </div>
         )}
