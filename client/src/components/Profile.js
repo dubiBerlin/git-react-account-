@@ -42,6 +42,12 @@ class Profile extends Component {
     });
   }
 
+  updateValue(parameter, event) {
+    var userInfoCopy = JSON.parse(JSON.stringify(this.state.userInfo));
+    userInfoCopy[parameter] = event.target.value;
+    this.setState({ userInfo: userInfoCopy });
+  }
+
   render() {
     return (
       <div className="container">
@@ -59,35 +65,35 @@ class Profile extends Component {
               type="text"
               value={this.state.userInfo.name}
               placeholder="Enter text"
-              //onChange={this.handleChange}
+              onChange={this.updateValue.bind(this, 'name')}
             />
             <ControlLabel>Username</ControlLabel>
             <FormControl
               type="text"
               value={this.state.userInfo.login}
               placeholder="Enter text"
-              //onChange={this.handleChange}
+              onChange={this.updateValue.bind(this, 'login')}
             />
             <ControlLabel>Bio</ControlLabel>
             <FormControl
               type="text"
               value={this.state.userInfo.bio}
               placeholder="Enter text"
-              //onChange={this.handleChange}
+              onChange={this.updateValue.bind(this, 'bio')}
             />
             <ControlLabel>Location</ControlLabel>
             <FormControl
               type="text"
               value={this.state.userInfo.location}
               placeholder="Enter text"
-              //onChange={this.handleChange}
+              onChange={this.updateValue.bind(this, 'location')}
             />
             <ControlLabel>Company</ControlLabel>
             <FormControl
               type="text"
               value={this.state.userInfo.company}
               placeholder="Enter text"
-              //onChange={this.handleChange}
+              onChange={this.updateValue.bind(this, 'company')}
             />
           </FormGroup>
         ) : (
