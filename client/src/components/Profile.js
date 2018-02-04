@@ -5,13 +5,19 @@ class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userInfo: {},
+      profile: {},
       editing: false
     };
   }
 
   componentDidMount() {
     this.props.fetchProfile();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      profile: nextProps.profile
+    });
   }
 
   clickMethod() {
@@ -21,9 +27,9 @@ class Profile extends Component {
   }
 
   updateValue(parameter, event) {
-    var userInfoCopy = JSON.parse(JSON.stringify(this.state.userInfo));
+    var userInfoCopy = JSON.parse(JSON.stringify(this.state.profile));
     userInfoCopy[parameter] = event.target.value;
-    this.setState({ userInfo: userInfoCopy });
+    this.setState({ profile: userInfoCopy });
   }
 
   render() {
@@ -41,35 +47,35 @@ class Profile extends Component {
             <ControlLabel>Name</ControlLabel>
             <FormControl
               type="text"
-              value={this.state.userInfo.name}
+              value={this.state.profile.name}
               placeholder="Enter text"
               onChange={this.updateValue.bind(this, 'name')}
             />
             <ControlLabel>Username</ControlLabel>
             <FormControl
               type="text"
-              value={this.state.userInfo.login}
+              value={this.state.profile.login}
               placeholder="Enter text"
               onChange={this.updateValue.bind(this, 'login')}
             />
             <ControlLabel>Bio</ControlLabel>
             <FormControl
               type="text"
-              value={this.state.userInfo.bio}
+              value={this.state.profile.bio}
               placeholder="Enter text"
               onChange={this.updateValue.bind(this, 'bio')}
             />
             <ControlLabel>Location</ControlLabel>
             <FormControl
               type="text"
-              value={this.state.userInfo.location}
+              value={this.state.profile.location}
               placeholder="Enter text"
               onChange={this.updateValue.bind(this, 'location')}
             />
             <ControlLabel>Company</ControlLabel>
             <FormControl
               type="text"
-              value={this.state.userInfo.company}
+              value={this.state.profile.company}
               placeholder="Enter text"
               onChange={this.updateValue.bind(this, 'company')}
             />
@@ -79,27 +85,27 @@ class Profile extends Component {
             <p>
               <strong>Name</strong>
               <br />
-              {this.state.userInfo.name}
+              {this.state.profile.name}
             </p>
             <p>
               <strong>Username</strong>
               <br />
-              {this.state.userInfo.login}
+              {this.state.profile.login}
             </p>
             <p>
               <strong>Bio</strong>
               <br />
-              {this.state.userInfo.bio}
+              {this.state.profile.bio}
             </p>
             <p>
               <strong>Location</strong>
               <br />
-              {this.state.userInfo.location}
+              {this.state.profile.location}
             </p>
             <p>
               <strong>Company</strong>
               <br />
-              {this.state.userInfo.company}
+              {this.state.profile.company}
             </p>
           </div>
         )}

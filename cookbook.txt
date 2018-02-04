@@ -11,3 +11,4 @@
 8) npm i react-redux --save
 9) npm i jquery --save (react-redux needs jquery)
 10) npm i redux --save
+10) npm i redux-thunk --save
