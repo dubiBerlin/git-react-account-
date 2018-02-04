@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SliderComponent from './Slider';
-import Profile from './Profile';
+import Profile from '../containers/Profile';
 import {
   Navbar,
   Nav,
