@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import {
-  FormGroup,
-  ControlLabel,
-  FormControl,
-  HelpBlock,
-  Button
-} from 'react-bootstrap';
+import { FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
 
 class Profile extends Component {
   constructor(props) {
@@ -63,7 +57,7 @@ class Profile extends Component {
             <ControlLabel>Name:</ControlLabel>
             <FormControl
               type="text"
-              //value={this.state.value}
+              value={this.state.userInfo.login}
               placeholder="Enter text"
               //onChange={this.handleChange}
             />
@@ -71,8 +65,10 @@ class Profile extends Component {
         ) : (
           <div>
             <p>
-              <strong>Name:</strong>
-              {this.state.userInfo.name}
+              <strong>
+                Name:
+                {this.state.userInfo.login}
+              </strong>
             </p>
           </div>
         )}
