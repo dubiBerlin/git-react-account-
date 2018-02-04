@@ -10,31 +10,7 @@ class Profile extends Component {
     };
   }
 
-  componentDidMount() {
-    let header = new Headers({
-      'Content-Type': 'application/json',
-      Authorization: 'token 3a10937b87bf154b6e1798384a275d3ab438fc98'
-    });
-    fetch('https://api.github.com/users/dubiBerlin', {
-      method: 'GET',
-      Headers: header
-    })
-      .then(response => response.json()) // formats the response to a json object
-      .then(json => {
-        this.setState({
-          userInfo: json
-        });
-
-        console.log(
-          '\n\nactions_info JSON' + JSON.stringify(json, undefined, 2)
-        );
-        // dispatch alerts the reducer and gives him the action-info
-        //dispatch(loadInfo(json));
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }
+  componentDidMount() {}
 
   clickMethod() {
     this.setState({
