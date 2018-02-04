@@ -1,4 +1,4 @@
-import { PROFILE_FETCHED } from '../actions/actions_info';
+import { PROFILE_FETCHED } from '../actions/actions_profile';
 
 /*
  * Receives information by the dispatch() method in action and sees what kind of

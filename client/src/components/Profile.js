@@ -10,7 +10,9 @@ class Profile extends Component {
     };
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.props.fetchProfile();
+  }
 
   clickMethod() {
     this.setState({

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import info from './reducers_profile';
+import profile from './reducers_profile';
 
 /* Defines what kind of information goes into the store */
 

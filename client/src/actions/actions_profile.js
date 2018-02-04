@@ -1,17 +1,21 @@
+import { getToken } from '../secret/token';
 export const PROFILE_FETCHED = 'PROFILE_FETCHED';
 export const PROFILE_EDITED = 'PROFILE_EDITED';
-import { getToken } from '../secret/token';
 
-export function fetchInfo() {
+export function fetchProfile() {
+  var token = getToken();
+
+  console.log('TOKEN: ' + token);
+
   let header = new Headers({
     'Content-Type': 'application/json',
-    Authorization: getToken
+    Authorization: token
   });
 
   return dispatch => {
     fetch('https://api.github.com/users/dubiBerlin', {
       method: 'GET',
-      headers: header
+      Headers: header
     })
       .then(response => response.json()) // formats the response to a json object
       .then(json => {
